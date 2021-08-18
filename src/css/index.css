@@ -1,7 +1,3 @@
-body {
-    background-color: #f5f5f5;
-}
-
 a {
     text-decoration: none;
 }
@@ -9,12 +5,99 @@ a {
 .page {
     min-width: 320px;
     max-width: 450px;
-    height: 667px;
-    /* text-align: center; */
+    height: 100vh;
     margin: 0 auto;
-    border: 1px #000 solid;
+    background-image: url('../../img/background.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
     position: relative;
+    justify-content: center;
+    align-items: center;
 }
+
+.content{
+    width: 90%;
+    height: 90%;
+    background-image: url('../../img/transback.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.msg{
+    width: 100%;
+    height: 73%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.msg img{
+    width: 80%;
+    margin-top: 10px;
+}
+
+.msg h1{
+    font-size: 60px;
+    color: white;
+}
+
+.msg p{
+    font-size: 14px;
+    color: white;
+    margin-top: 10px;
+    letter-spacing: 5px;
+}
+
+.btn{
+    width: 100%;
+    height: 27%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn p{
+    font-size: 10px;
+    color: #9A888B;
+    letter-spacing: 5px;
+}
+
+.to_do{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+}
+
+.test,.sign-in{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.test i,.sign-in i{
+    font-size: 30px;
+    text-decoration: none;
+    color: #9A888B;
+}
+
+.test p,.sign-in p{
+    font-size: 20px;
+    text-decoration: none;
+    color: #9A888B;
+    letter-spacing: 20px;
+    margin-left: 30px;
+}
+
 
 .header {
     width: 100%;
@@ -41,10 +124,13 @@ a {
 .choose button {
     width: 200px;
     height: 35px;
-    background-color: #3bc492;
     border-radius: 4px;
     border: 0;
     margin-top: 15px;
+}
+
+.el-button+.el-button {
+    margin-left: 0;
 }
 
 .choose button:hover {

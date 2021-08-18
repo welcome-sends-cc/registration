@@ -5,44 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/base.css">
 </head>
 
 <body>
     <style>
-        body {
-            background-color: #f5f5f5;
-        }
-
         .page {
             min-width: 320px;
             max-width: 450px;
-            height: 667px;
-            border: 1px #000 solid;
+            height: 100vh;
             margin: 0 auto;
-            text-align: center;
+            background-image: url('../../img/qback.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            padding: 90px 30px 60px;
         }
 
         p {
-            font-size: 17px;
-            margin-top: 60%;
-            margin-bottom: 5%;
-            color: #6e6e6e;
+            font-size: 20px;
+            color: white;
+            line-height: 40px;
+        }
+
+        .large{
+            font-size: 30px;
+            letter-spacing: 5px;
         }
 
         a {
             text-decoration: none;
-            font-size: 18px;
-            color: #000;
-            display: block;
+            font-size: 20px;
+            color: #3b3bf1;
+            letter-spacing: 10px;
         }
     </style>
     <div class="page">
         <?php
         // 连接数据库、设置字符集
         $link = @mysqli_connect('localhost', 'root', 'hqusends', 'information')
-            or die("无法连接到服务器");
+            or die("<p>无法连接到服务器</p>");
         mysqli_set_charset($link, 'utf8');
         // 获取查询结果集
         if ($_POST['name'] != '') {
@@ -63,7 +71,7 @@
             if (strpos($error, 'Duplicate') !== false) {
                 $sq_update = "UPDATE `information` SET `s_name`='$name',`phone`='$phone',`qq`='$qq',`campus`='$campus',`academy`='$academy',`profession`='$profession',`firstVolunteer`='$first',`secondVolunteer`='$second',`introduce`='$introduce' where `id` = '$id'";
                 mysqli_query($link, $sq_update);
-                echo "<p>更改成功</P><a href=\"lotteryFront.php\">去抽奖</a></a>";
+                echo "<p>更改成功</P><a href=\"lotteryFront.php\">去抽奖</a>";
             } else {
                 $sq_add_lottery = "INSERT INTO lottery(id,occasion)
         VALUES('$id',1)";
@@ -72,7 +80,7 @@
             }
             mysqli_close($link);
         } else {
-            echo "<p>您有部分信息未填写，请填写完整后再次提交</p><a href=\"entryForm.php\" onclick=\"fill()\">返回提交</a>";
+            echo "<p class=\"large\">信息尚不完善</p><p>请补完后再试一次</p><a href=\"entryForm.php\" onclick=\"fill()\">返回</a>";
         }
         session_start();
         $_SESSION['id'] = $id;

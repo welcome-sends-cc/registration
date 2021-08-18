@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>幸运抽奖</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/lottery.css">
     <!-- <script type="text/javascript" src="../js/lottery.js"></script> -->
@@ -39,21 +39,24 @@
         mysqli_free_result($result_occasion);
         mysqli_close($link);
         ?>
-        <div class="turntable" style="position: absolute;left: 50%;transform:translateX(-50%)">
-            <div class="gift">一等奖</div>
+        <div class="turntable">
+            <p>按下神秘按钮</p>
+            <p>检测幸运值</p>
+            <img src="../../img/arrow.png" alt="">
+            <!-- <div class="gift">一等奖</div>
             <div class="gift">谢谢参与</div>
             <div class="gift">二等奖</div>
             <div class="gift">谢谢参与</div>
-            <div class="gift" id="occasion">剩余次数：<?php echo $occasion ?> </div>
+            <div class="gift" id="occasion">剩余次数： </div>
             <div class="gift">谢谢参与</div>
             <div class="gift">幸运奖</div>
             <div class="gift">谢谢参与</div>
-            <div class="gift">三等奖</div>
-            <button id="btn" class="start" onclick="time()">点击抽奖</button>
-            <button id="back" class="back" onclick="window.location.href='enterPageControl.php'">返回首页</button>
+            <div class="gift">三等奖</div> -->
+            <button id="btn" class="start" onclick="window.location.href='record.php'">点击抽奖</button>
+            <!-- <button id="back" class="back" onclick="window.location.href='enterPageControl.php'">返回首页</button>
             <div class="record">
                 <a href="record.php">查看获奖记录</a>
-            </div>
+            </div> -->
             <!-- <div id="info" style="display: none;"></div>
             <form id='result_form' action="lottery.php" method="POST" target="frameName">
                 <input name="results" id="results" type="hidden" value="">

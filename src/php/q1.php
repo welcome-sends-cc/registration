@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/question.css">
     <script type="text/javascript" src="../js/saveReport.js"></script>
 </head>
@@ -13,13 +13,23 @@
 <body>
     <div class="page">
         <div class="question">
-            <p>1.你是否具有探索互联网的热情？</p>
+            <p class="q">Q</p>
+            <p class="ques">你是否具有探索互联网的热情？</p>
         </div>
         <form name="anser" action="q1.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q1" id="a" value="q2.php" onclick="save()"><label for="a">是</label><br />
-            <input type="radio" name="q1" id="b" value="result.phpf" onclick="save()"><label for="b">否</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='enterPageControl.php'" class="button button1">
-            <input type="submit" value="next" name="next" class="button button2">
+            <div class="choose">
+                <button type="radio" name="q1" id="a" value="q2.php" onclick="save()"><label for="a">是。</label><br />
+                </button>
+                <button type="radio" name="q1" id="b" value="result.phpf" onclick="save()"><label for="b">否。</label><br />
+                </button>
+            </div>
+            <!-- <input type="radio" name="q1" id="a" value="q2.php" onclick="save()"><label for="a">是</label><br />
+            <input type="radio" name="q1" id="b" value="result.phpf" onclick="save()"><label for="b">否</label><br /> -->
+            <div class="operBar">
+                <input type="reset" value="Back" name="back" onclick="window.location.href='enterPageControl.php'"
+                class="oper">
+            <input type="submit" value="Next" name="next" class="oper">
+            </div>
         </form>
         <?php
         session_start();
@@ -41,7 +51,7 @@
                 }
             }
 
-            window.onload = function() {
+            window.onload = function () {
                 var cookies = document.cookie;
                 if (cookies != "") {
                     cookies = "{\"" + cookies + "\"}";
@@ -51,7 +61,6 @@
                 } else {
                     save();
                 }
-
             }
         </script>
 </body>

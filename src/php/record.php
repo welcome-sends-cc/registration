@@ -5,27 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/base.css">
 </head>
 <style>
-    body {
-        background-color: #f5f5f5;
-    }
-
     .page {
         min-width: 320px;
         max-width: 450px;
-        height: 667px;
-        /* text-align: center; */
+        height: 100vh;
         margin: 0 auto;
-        border: 1px #000 solid;
-        font-size: 20px;
-        text-align: center;
-        font-weight: bold;
+        background-image: url('../../img/qback.png');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        -moz-background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 90px 30px 60px;
     }
 
-    .back {
+    .page p{
+        font-size: 40px;
+        color: white;
+        line-height: 100px;
+        font-weight: lighter;
+        letter-spacing: 10px;
+    }
+
+    /* .back {
         width: 80%;
         display: inline-block;
         margin-top: 40%;
@@ -47,11 +56,13 @@
         text-decoration: none;
         transition: all 0.2s ease-out 0s;
         border-radius: 2px;
-    }
+    } */
 </style>
 
 <body>
     <div class="page">
+        <p style="font-weight: 500;">"祝贺!"</p>
+        <p>你获得了</p>
         <?php
         $link = @mysqli_connect('localhost', 'root', 'hqusends', 'information')
             or die("无法连接到服务器");
@@ -63,11 +74,12 @@
         $result_gift = mysqli_query($link, $sq_query_occasion);
         $row = mysqli_fetch_assoc($result_gift);
         $gift = $row['gift'];
-        echo "获奖记录：", $gift;
+        echo $gift;
         ?>
-        <div class="btn">
+        <p>奖</p>
+        <!-- <div class="btn">
             <button class="back" onclick="window.location.href='lotteryFront.php'">返回</button>
-        </div>
+        </div> -->
     </div>
 </body>
 

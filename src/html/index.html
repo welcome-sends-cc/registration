@@ -6,29 +6,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>桑梓纳新报名页面</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="#" />
 </head>
 
 <body>
-    <div class="page">
-        <div class="header">
+    <div class="page" id="app">
+        <div class="content">
+            <div class="msg">
+                <img src="../../img/logo.png" alt="网络创新实验室">
+                <h1>“欢迎!”</h1>
+                <p>你不需要很厉害才能开始</p>
+                <p>你需要开始才能很厉害</p>
+            </div>
+            <div class="btn">
+                <p>通过测试 找到适合你的部门</p>
+                <div class="to_do">
+                    <a href="../php/q1.php" class="test" onclick="window.location.href='../php/q1.php'">
+                        <i class="el-icon-edit"></i>
+                        <p>进入测试</p>
+                    </a>
+                </div>
+                <div class="to_do">
+                    <a href="../php/entryForm.php" class="sign-in"
+                        onclick="window.location.href='../php/entryForm.php'">
+                        <i class="el-icon-user"></i>
+                        <p>直接报名</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="header">
             <a class="logo" href="test.php"><img src="">Sends Network Innovation Lab is taking in new members!</img>
             </a>
         </div>
-        <!-- container text -->
+        
         <div class="container">
             <h2>欢迎加入</h2>
             <h2>桑梓实验室</h2>
         </div>
         <div class="choose">
-            <button class="test" onclick="window.location.href='../php/q1.php'">先体验一些测试吧</button>
-            <button class="sign-in" onclick="window.location.href='../php/entryForm.php'">不了，直接去报名了</button>
-        </div>
+            <mt-button type="primary" class="test" onclick="window.location.href='../php/q1.php'" round>先体验一些测试吧
+            </mt-button>
+            <mt-button type="primary" class="sign-in" onclick="window.location.href='../php/entryForm.php'" round>
+                不了，直接去报名了</mt-button>
+        </div> -->
     </div>
     <noscript>
-    <strong>年度报告需要 JavaScript 才能正常运行，请启用。</strong>
-  </noscript>
+        <strong>年度报告需要 JavaScript 才能正常运行，请启用。</strong>
+    </noscript>
 </body>
+<!-- <script>
+    new Vue({
+        el: '#app',
+        data: {
+        }
+    })
+</script> -->
 
 </html>

@@ -1,48 +1,77 @@
-body {
-    background-color: #f5f5f5;
-}
-
 .page {
     min-width: 320px;
     max-width: 450px;
-    height: 667px;
-    /* text-align: center; */
+    height: 100vh;
     margin: 0 auto;
+    background-image: url('../../img/qback.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
     position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 90px 30px 60px;
 }
 
-.result {
-    color: #4d4d4d;
-    background-color: #d3fafa;
-    border: 1px #000 solid;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 6px;
-    margin: 5px;
-    margin-top: 0;
-    margin-bottom: 0;
+.result,.result span {
+    color: white;
     font-size: 15px;
-}
-
-span {
-    color: #ff0000;
-    font-weight: bold;
-}
-
-.section {
-    color: #ff0000;
-    border-left: 1px rgb(105, 105, 105) solid;
-    border-right: 1px rgb(105, 105, 105) solid;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    margin: 35%;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
     text-align: center;
 }
 
-.information {
+.result span{
+    font-weight: bold;
+}
+
+.introduce{
+    height: 85%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result p{
+    color: white;
+    font-size: 25px;
+}
+
+.section {
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    color: #caccd8;
+    background: #a7a4a46e;
+    border-radius: 15px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.section p{
+    color: white;
+    font-size: 20px;
+    letter-spacing: 10px;
+}
+
+.operBar{
+    width: 90%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.oper{
+    background: none;
+    border: 0;
+    color: #3b3bf1;
+    font-size: 17px;
+}
+
+/* .information {
+    width: 90%;
     color: #000000;
     border: 1px rgb(105, 105, 105) solid;
     border-radius: 3px;
@@ -53,9 +82,9 @@ span {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 12px;
-}
+} */
 
-button.button {
+/* button.button {
     width: 100px;
     color: rgb(25, 137, 250);
     font-size: 15px;
@@ -73,4 +102,4 @@ button.button {
 
 .button2 {
     right: 17%;
-}
+} */

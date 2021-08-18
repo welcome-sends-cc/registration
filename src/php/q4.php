@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>桑梓纳新报名页面</title>
     <link rel="stylesheet" href="../css/question.css">
     <script type="text/javascript" src="../js/saveReport.js"></script>
 </head>
@@ -13,13 +13,22 @@
 <body>
     <div class="page">
         <div class="question">
-            <p>4.是否对充当“安全卫士”这个角色感兴趣？</p>
+            <p class="q">Q</p>
+            <p class="ques">是否对充当“安全卫士”这个角色感兴趣？</p>
         </div>
         <form action="q4.php" method="post" onsubmit="return saveReport();">
-            <input type="radio" name="q4" id="a" value="result.phpd" onclick="save()"><label for="a">是</label><br />
-            <input type="radio" name="q4" id="b" value="q5.php" onclick="save()"><label for="b">否</label><br />
-            <input type="reset" value="back" name="back" onclick="window.location.href='<?php echo 'q3.php'; ?>'" class="button button1">
-            <input type="submit" value="next" name="next" class="button button2">
+            <div class="choose">
+                <button type="radio" name="q4" id="a" value="result.phpd" onclick="save()"><label for="a">是。</label><br />
+                </button>
+                <button type="radio" name="q4" id="b" value="q5.php" onclick="save()"><label for="b">否。</label><br />
+                </button>
+            </div>
+            <!-- <input type="radio" name="q4" id="a" value="result.phpd" onclick="save()"><label for="a">是</label><br />
+            <input type="radio" name="q4" id="b" value="q5.php" onclick="save()"><label for="b">否</label><br /> -->
+            <div class="operBar">
+                <input type="reset" value="Back" name="back" onclick="window.location.href='<?php echo 'q3.php'; ?>'" class="oper">
+            <input type="submit" value="Next" name="next" class="oper">
+            </div>
         </form>
         <?php
         session_start();
@@ -51,7 +60,6 @@
                 } else {
                     save();
                 }
-
             }
         </script>
     </div>
