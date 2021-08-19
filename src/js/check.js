@@ -61,21 +61,32 @@ function checkAll(form) {
         form.profession.focus();
         return false
     }
+
+
+    document.getElementById("firstVolunteer").value = "";
+    document.getElementById("secondVolunteer").value = "";
+    for (var i = 0; i < 5; i++) {
+        if (document.getElementsByClassName('text-info')[i].innerHTML == "志愿一") {
+            document.getElementById("firstVolunteer").value = document.getElementsByClassName('text')[i].innerHTML;
+        } else if (document.getElementsByClassName('text-info')[i].innerHTML == "志愿二") {
+            document.getElementById("secondVolunteer").value = document.getElementsByClassName('text')[i].innerHTML;
+        } else {
+            continue;
+        }
+    }
+
     var firstVolunteer = document.getElementById("firstVolunteer").value;
-    if (firstVolunteer == 0) {
-        alert("请选择第一志愿");
-        form.firstVolunteer.focus();
+    if (firstVolunteer == "") {
+        alert("请选择志愿");
         return false;
     }
     var secondVolunteer = document.getElementById("secondVolunteer").value;
-    if (secondVolunteer == 0) {
-        alert("请选择第二志愿");
-        form.secondVolunteer.focus();
-        return false;
-    } else if (firstVolunteer == secondVolunteer) {
-        alert("请选择两个不同的志愿方向");
+    if (secondVolunteer == "") {
+        alert("请选择两个志愿");
         return false;
     }
+
+
     var introduce = document.getElementById("introduce").value;
     if (introduce == '') {
         alert("自我介绍一下吧！");

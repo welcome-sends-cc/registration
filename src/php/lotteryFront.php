@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>桑梓纳新报名页面</title>
+    <title>幸运抽奖</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/lottery.css">
     <!-- <script type="text/javascript" src="../js/lottery.js"></script> -->
@@ -40,8 +40,15 @@
         mysqli_close($link);
         ?>
         <div class="turntable">
-            <p>按下神秘按钮</p>
-            <p>检测幸运值</p>
+            <?php
+            if($occasion != 0){
+                echo "<p>按下神秘按钮</p>
+                <p>检测幸运值</p>";
+            }else{
+                echo "<p>您已抽过奖了</p>
+                <p>查看结果</p>";
+            }
+            ?>
             <img src="../../img/arrow.png" alt="">
             <!-- <div class="gift">一等奖</div>
             <div class="gift">谢谢参与</div>
@@ -52,7 +59,13 @@
             <div class="gift">幸运奖</div>
             <div class="gift">谢谢参与</div>
             <div class="gift">三等奖</div> -->
-            <button id="btn" class="start" onclick="window.location.href='record.php'">点击抽奖</button>
+            <?php
+            if($occasion != 0){
+                echo "<button id=\"btn\" class=\"start\" onclick=\"window.location.href='lotteryBack.php'\">点击抽奖</button>";
+            }else{
+                echo "<button id=\"btn\" class=\"start\" onclick=\"window.location.href='record.php'\">查看结果</button>";
+            }
+            ?>
             <!-- <button id="back" class="back" onclick="window.location.href='enterPageControl.php'">返回首页</button>
             <div class="record">
                 <a href="record.php">查看获奖记录</a>
@@ -68,12 +81,11 @@
         </div>
     </div>
 </body>
-<script>
-    var occasion = <?php echo $occasion ?>;
-    if (occasion == 0) {
-        document.getElementById('btn').style.backgroundColor = "#787878";
-        document.getElementById('btn').disabled = true;
-    }
+<!-- <script>
+    // if (occasion == 0) {
+    //     document.getElementById('btn').innerHTML = "查看抽奖结果";
+    //     document.getElementById('btn').disabled = true;
+    // }
     var gift;
     var x = 0;
     // //可修改ArrList以定义每一奖项中奖概率;
@@ -214,6 +226,6 @@
     //         }
     //     }
     // }
-</script>
+</script> -->
 
 </html>

@@ -28,7 +28,7 @@ if (count($gift_id_list) != 0) {
     //更新奖品信息
     $sq_change_gift = "UPDATE `lottery` SET `gift`='$gift_name' WHERE `id`='$id'";
     mysqli_query($link, $sq_change_gift);
-    echo $gift_id;
+    // echo $gift_id;
     mysqli_free_result($result);
     mysqli_free_result($result_gift_name);
 } else {
@@ -51,4 +51,5 @@ if (count($gift_id_list) != 0) {
     $sq_change_gift = "UPDATE `lottery` SET `gift`='谢谢参与' WHERE `id`='$id'";
     mysqli_query($link, $sq_change_gift);
 }
+Header("Location:record.php");
 mysqli_close($link);

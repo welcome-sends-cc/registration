@@ -74,7 +74,8 @@ form {
     background: #FF3F31;
 }
 
-input, select {
+input,
+select {
     width: 58%;
     background: none;
     color: white;
@@ -110,6 +111,7 @@ option {
 .oper-r {
     text-align: right;
 }
+
 
 /* .sign_in input,
 select {
@@ -162,6 +164,7 @@ input.button {
     bottom: 5%;
     /* margin-top: 7%; */
 
+
 /*}
 
 .button1 {
@@ -171,3 +174,23 @@ input.button {
 .button2 {
     right: 17%;
 } */
+
+.volunteer {
+    float: right;
+}
+
+.selection {
+    width: 46px;
+    height: 46px;
+    background-color: #a3a3a3;
+    float: left;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.selection .text-info {
+    font-size: 1px;
+    color: #3b3b3b;
+}

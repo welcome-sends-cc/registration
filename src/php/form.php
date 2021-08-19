@@ -44,6 +44,7 @@
             font-size: 20px;
             color: #3b3bf1;
             letter-spacing: 10px;
+            margin-left: 10px;
         }
     </style>
     <div class="page">

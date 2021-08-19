@@ -61,22 +61,26 @@
 
 <body>
     <div class="page">
-        <p style="font-weight: 500;">"祝贺!"</p>
-        <p>你获得了</p>
         <?php
         $link = @mysqli_connect('localhost', 'root', 'hqusends', 'information')
             or die("无法连接到服务器");
         mysqli_set_charset($link, 'utf8');
         session_start();
         $id = $_SESSION['id'];
-        //查询剩余次数
+        //查询礼物
         $sq_query_occasion = "SELECT gift FROM `lottery` WHERE id = $id;";
         $result_gift = mysqli_query($link, $sq_query_occasion);
         $row = mysqli_fetch_assoc($result_gift);
         $gift = $row['gift'];
-        echo $gift;
+        if($gift == "谢谢参与"){
+            echo "<p style=\"font-weight: 500;\">很遗憾</p>
+                    <p>你获得了</p>";
+        }else{
+            echo "<p style=\"font-weight: 500;\">祝贺!</p>
+            <p>你获得了</p>";
+        }
+        echo "<p>\"$gift\"</p>";
         ?>
-        <p>奖</p>
         <!-- <div class="btn">
             <button class="back" onclick="window.location.href='lotteryFront.php'">返回</button>
         </div> -->

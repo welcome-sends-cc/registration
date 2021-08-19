@@ -113,12 +113,36 @@
                     </div>
                     <input type="text" name="profession" id="profession">
                 </div>
-                <div class="in">
+                <div class="">
                     <div class="before">
                         <div class="circle circle3"></div>
-                        <span>第一志愿</span>
+                        <span>志愿部门</span>
                     </div>
-                    <select name="firstVolunteer" id="firstVolunteer">
+                    <div class="volunteer">
+                        <div class="selection" onclick="selected(this,0)">
+                            <div class="text">策划</div>
+                            <div class="text-info">未选择</div>
+                        </div>
+                        <div class="selection" onclick="selected(this,1)">
+                            <div class="text">美工</div>
+                            <div class="text-info">未选择</div>
+                        </div>
+                        <div class="selection" onclick="selected(this,2)">
+                            <div class="text">软件</div>
+                            <div class="text-info">未选择</div>
+                        </div>
+                        <div class="selection" onclick="selected(this,3)">
+                            <div class="text">运维</div>
+                            <div class="text-info">未选择</div>
+                        </div>
+                        <div class="selection" onclick="selected(this,4)">
+                            <div class="text">运营</div>
+                            <div class="text-info">未选择</div>
+                        </div>
+                    </div>
+                    <input type="text" name="firstVolunteer" id="firstVolunteer" style="display: none;">
+                    <input type="text" name="secondVolunteer" id="secondVolunteer" style="display: none;">
+                    <!-- <select name="firstVolunteer" id="firstVolunteer" style="display: none;">
                         <option disabled selected value="0">请选择第一志愿</option>
                         <option value="1">策划部</option>
                         <option value="2">美工部</option>
@@ -126,37 +150,71 @@
                         <option value="4">运维部</option>
                         <option value="5">运营部</option>
                     </select>
-                </div>
-                <div class="in">
-                    <div class="before">
-                        <div class="circle circle3"></div>
-                        <span>第二志愿</span>
-                    </div>
-                    <select name="secondVolunteer" id="secondVolunteer">
+                    <select name="secondVolunteer" id="secondVolunteer" style="display: none;">
                         <option disabled selected value="0">请选择第二志愿</option>
                         <option value="1">策划部</option>
                         <option value="2">美工部</option>
                         <option value="3">软件部</option>
                         <option value="4">运维部</option>
                         <option value="5">运营部</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div class="in">
                     <div class="before">
                         <div class="circle circle3"></div>
                         <span>介绍你自己</span>
                     </div>
-                    <textarea name="introduce" id="introduce" class="introduce" rows="1"
-                        placeholder="自我介绍(提示：自己的兴趣、优势及想要加入部门的原因)"></textarea>
+                    <textarea name="introduce" id="introduce" class="introduce" rows="1" placeholder="自我介绍(提示：自己的兴趣、优势及想要加入部门的原因)"></textarea>
                 </div>
                 <div class="operBar">
-                    <input type="reset" value="返回" name="back" onclick="window.location.href='enterPageControl.php'"
-                        class="oper">
+                    <input type="reset" value="返回" name="back" onclick="window.location.href='enterPageControl.php'" class="oper">
                     <input type="submit" value="<?php echo $text; ?>" name="next" class="oper oper-r">
                 </div>
             </form>
         </div>
     </div>
 </body>
+<script>
+    function selected(obj, num) {
+        var count = 0;
+        for (var i = 0; i < 5; i++) {
+            if (document.getElementsByClassName('text-info')[i].innerHTML != "未选择") {
+                count++;
+            } else {
+                continue;
+            }
+        }
+        if (obj.style.backgroundColor == 'rgb(59, 130, 246)') { //还原
+            obj.style.backgroundColor = "#a3a3a3";
+            document.getElementsByClassName('text')[num].style.color = "#000";
+            document.getElementsByClassName('text-info')[num].innerHTML = "未选择";
+            document.getElementsByClassName('text-info')[num].style.color = "#3b3b3b";
+            if (count == 2) {
+                for (var j = 0; j < 5; j++) {
+                    if (document.getElementsByClassName('text-info')[j].innerHTML == "志愿二") {
+                        document.getElementsByClassName('text-info')[j].innerHTML = "志愿一";
+                        break;
+                    } else {
+                        continue;
+                    }
+                }
+            }
+        } else if (count == 0) { //选中1
+            obj.style.backgroundColor = 'rgb(59, 130, 246)';
+            document.getElementsByClassName('text')[num].style.color = "#fff";
+            document.getElementsByClassName('text-info')[num].innerHTML = "志愿一";
+            document.getElementsByClassName('text-info')[num].style.color = "93c5fd";
+            count++;
+        } else if (count == 1) { //选中2
+            obj.style.backgroundColor = 'rgb(59, 130, 246)';
+            document.getElementsByClassName('text')[num].style.color = "#fff";
+            document.getElementsByClassName('text-info')[num].innerHTML = "志愿二";
+            document.getElementsByClassName('text-info')[num].style.color = "93c5fd";
+            count++;
+        } else if (count >= 2) {
+            alert("至多选择两个部门");
+        }
+    }
+</script>
 
 </html>

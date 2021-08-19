@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>桑梓纳新报名页面</title>
+    <title>小测试</title>
     <link rel="stylesheet" href="../css/question.css">
     <script type="text/javascript" src="../js/saveReport.js"></script>
 </head>
@@ -18,7 +18,7 @@
         </div>
         <form action="q12.php" method="post" onsubmit="return saveReport();">
             <div class="choose">
-                <button type="radio" name="q12" id="a" value="result.phpa" onclick="save()"><label
+                <!-- <button type="radio" name="q12" id="a" value="result.phpa" onclick="save()"><label
                         for="a">前期策划</label><br />
                 </button>
                 <button type="radio" name="q12" id="b" value="result.phpb" onclick="save()"><label
@@ -32,16 +32,25 @@
                 </button>
                 <button type="radio" name="q12" id="e" value="result.phpe" onclick="save()"><label
                         for="e">宣传推广</label><br />
-                </button>
+                </button> -->
+                <div class="answer">
+                    <input type="radio" name="q12" id="a" value="result.phpa" onclick="save()"><label for="a"><span>前期策划</span></label><br />
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q12" id="b" value="result.phpb" onclick="save()"><label for="b"><span>软件开发</span></label><br />
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q12" id="c" value="result.phpc" onclick="save()"><label for="c"><span>界面设计</span></label><br />
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q12" id="d" value="result.phpd" onclick="save()"><label for="d"><span>后台技术</span></label><br />
+                </div>
+                <div class="answer">
+                    <input type="radio" name="q12" id="e" value="result.phpe" onclick="save()"><label for="e"><span>宣传推广</span></label><br />
+                </div>
             </div>
-            <!-- <input type="radio" name="q12" id="a" value="result.phpa"onclick="save()"><label for="a">前期策划</label><br />
-            <input type="radio" name="q12" id="b" value="result.phpb"onclick="save()"><label for="b">软件开发</label><br />
-            <input type="radio" name="q12" id="c" value="result.phpc"onclick="save()"><label for="c">界面设计</label><br />
-            <input type="radio" name="q12" id="d" value="result.phpd"onclick="save()"><label for="d">后台技术</label><br />
-            <input type="radio" name="q12" id="e" value="result.phpe"onclick="save()"><label for="e">宣传推广</label><br /> -->
             <div class="operBar">
-                <input type="reset" value="Back" name="back" onclick="window.location.href='<?php echo 'q11.php' ?>'"
-                    class="oper">
+                <input type="reset" value="Back" name="back" onclick="window.location.href='<?php echo 'q11.php' ?>'" class="oper">
                 <input type="submit" value="Next" name="next" class="oper">
             </div>
         </form>
@@ -57,6 +66,15 @@
         ?>
         <script language="javascript" type="text/javascript">
             function save() {
+                for (var i = 0; i < document.getElementsByClassName('answer').length; i++) {
+                    if (document.getElementsByName("q12")[i].checked == true) {
+                        document.getElementsByClassName('answer')[i].style.backgroundColor = "rgba(255,0,0,0.8)";
+                        document.getElementsByClassName('answer')[i].style.border = "1px solid rgba(255,255,255,0.5)";
+                    } else {
+                        document.getElementsByClassName('answer')[i].style.backgroundColor = "rgba(255, 242, 242, 0.278)";
+                        document.getElementsByClassName('answer')[i].style.border = "rgba(255, 242, 242, 0.278)";
+                    }
+                }
                 var radios = document.getElementsByName("q12");
                 for (var i = 0; i < radios.length; i++) {
                     if (radios[i].checked) {
@@ -65,7 +83,7 @@
                 }
             }
 
-            window.onload = function () {
+            window.onload = function() {
                 var cookies = document.cookie;
                 if (cookies != "") {
                     cookies = "{\"" + cookies + "\"}";
@@ -74,6 +92,15 @@
                     document.getElementsByName("q12")[json.q12index].checked = true;
                 } else {
                     save();
+                }
+                for (var i = 0; i < document.getElementsByClassName('answer').length; i++) {
+                    if (document.getElementsByName("q12")[i].checked == true) {
+                        document.getElementsByClassName('answer')[i].style.backgroundColor = "rgba(255,0,0,0.8)";
+                        document.getElementsByClassName('answer')[i].style.border = "1px solid rgba(255,255,255,0.5)";
+                    } else {
+                        document.getElementsByClassName('answer')[i].style.backgroundColor = "rgba(255, 242, 242, 0.278)";
+                        document.getElementsByClassName('answer')[i].style.border = "rgba(255, 242, 242, 0.278)";
+                    }
                 }
             }
         </script>
